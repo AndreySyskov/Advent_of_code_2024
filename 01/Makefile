@@ -1,7 +1,8 @@
 all: build
 	
 
-build: 01.cpp mylib.cpp
+build: 01.cpp mylib.cpp clean
+	
 	g++ 01.cpp mylib.cpp -o main
 
 test:

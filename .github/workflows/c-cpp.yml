@@ -42,11 +42,14 @@ jobs:
       run: |
         sudo apt-get update && sudo apt-get install -y libgtest-dev
     - name: modul_test
-      run: make test
       working-directory: day_01/01/
-    - name: functional_test
       run: |
-        cd day_01/01/
+      make test | tee test_results.log
+      cat test_results.log
+      
+    - name: functional_test
+      working-directory: day_01/01/
+      run: |
         make build
         ./main test_imput_01_day.txt
     

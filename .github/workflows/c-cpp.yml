@@ -1,0 +1,45 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "main" ]
+    paths: [ "day01/01/" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  clang:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: clang
+      run: | 
+        pwd
+        make clang
+        
+  build:
+    needs: clang
+    runs-on: ubuntu-latest
+   
+    steps:
+    - uses: actions/checkout@v4
+    - name: build
+      run: make build
+
+  test:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps: 
+    - uses: actions/checkout@v4
+    - name: modul_test
+      run: make test
+    - name: functional_test
+      run: |
+        make build
+        ./main test_imput_01_day.txt
+    
+    
+

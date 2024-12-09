@@ -59,7 +59,7 @@ jobs:
       working-directory: day_01/01/
       run: |
         make build
-        ./main test_imput_01_day.txt | grep "11"
+        ./main test_imput_01_day.txt | grep "12"
     
     
 

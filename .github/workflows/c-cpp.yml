@@ -17,6 +17,7 @@ jobs:
     - name: clang
       run: | 
         pwd
+        cd day_01/01/
         make clang
         
   build:
@@ -26,7 +27,9 @@ jobs:
     steps:
     - uses: actions/checkout@v4
     - name: build
-      run: make build
+      run: |
+        cd day_01/01/
+        make build
 
   test:
     needs: build
@@ -35,7 +38,10 @@ jobs:
     steps: 
     - uses: actions/checkout@v4
     - name: modul_test
-      run: make test
+      run: |
+        cd day_01/01/
+        make test
+        
     - name: functional_test
       run: |
         make build

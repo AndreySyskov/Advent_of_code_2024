@@ -44,8 +44,8 @@ jobs:
     - name: modul_test
       working-directory: day_01/01/
       run: |
-      make test | tee test_results.log
-      cat test_results.log
+        make test | tee test_results.log
+        cat test_results.log
       
     - name: functional_test
       working-directory: day_01/01/

@@ -28,3 +28,4 @@ int summ (int* arr_1, int size){
     }
     return summa;
 }
+// тест

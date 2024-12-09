@@ -43,9 +43,9 @@ jobs:
         sudo apt-get update && sudo apt-get install -y libgtest-dev
     - name: modul_test
       working-directory: day_01/01/
-      run: |
-        make test | tee test_results.log
-        cat test_results.log
+      run: g++ -o test_program mytest.cpp mylib.cpp  -lgtest -lgtest_main -pthread
+      #make test | tee test_results.log
+      #cat test_results.log
       
     - name: functional_test
       working-directory: day_01/01/

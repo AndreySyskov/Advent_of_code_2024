@@ -14,10 +14,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+
     - name: clang
       run: | 
         pwd
         cd day_01/01/
+        set -e
         make clang
         
   build:
@@ -37,6 +39,10 @@ jobs:
 
     steps: 
     - uses: actions/checkout@v4
+    - name: Set up C++ environment
+      uses: actions/setup-cpp@v1
+      with:
+          compiler: g++
     - name: Install dependencies
       run: sudo apt-get install -y gtest
     - name: modul_test

@@ -48,6 +48,7 @@ jobs:
         
     - name: functional_test
       run: |
+        cd day_01/01/
         make build
         ./main test_imput_01_day.txt
     

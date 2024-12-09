@@ -9,7 +9,7 @@ clang:
 	clang-format -n -style=google  *.cpp *.h
 
 test:
-	clean
+	rm -rf test_program
 	g++ -o test_program mytest.cpp mylib.cpp  -lgtest -lgtest_main -pthread
 	./test_program
 

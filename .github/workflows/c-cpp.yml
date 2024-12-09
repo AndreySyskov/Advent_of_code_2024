@@ -26,6 +26,7 @@ jobs:
           else
             echo "OK"
           fi
+          cat clang_log.txt
         
   build:
     needs: clang

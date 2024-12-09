@@ -6,7 +6,7 @@ TEST(ArraySortTest, BasicSort) {
     int arr[] = {3, 4, 2, 1, 3, 3};
     int size = sizeof(arr) / sizeof(arr[0]);
     arr_sort(arr, size);
-    EXPECT_EQ(arr[0], 1);
+    EXPECT_EQ(arr[0], 0);
     EXPECT_EQ(arr[1], 2);
     EXPECT_EQ(arr[2], 3);
     EXPECT_EQ(arr[3], 3);

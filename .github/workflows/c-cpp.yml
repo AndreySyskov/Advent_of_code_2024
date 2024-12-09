@@ -19,7 +19,9 @@ jobs:
       run: | 
         pwd
         cd day_01/01/
-        make clang | tee clang_log.txt
+        make clang &> clang_log.txt
+        sed '1d' clang_log.txt > temp_file && mv temp_file clang_log.txt
+
         if [ -s "clang_log.txt" ]; then
             echo "The code is not formatted according to the requirements of the code style"
             exit 1

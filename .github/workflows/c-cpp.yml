@@ -19,7 +19,13 @@ jobs:
       run: | 
         pwd
         cd day_01/01/
-        make clang
+        make clang | tee clang_log.txt
+        if [ -s "clang_log.txt" ]; then
+            echo "The code is not formatted according to the requirements of the code style"
+            exit 1
+          else
+            echo "OK"
+          fi
         
   build:
     needs: clang
